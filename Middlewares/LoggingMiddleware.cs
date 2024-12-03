@@ -41,12 +41,12 @@ public class LoggingMiddleware
             RequestPath = context.Request.Path,
             QueryString = context.Request.QueryString.ToString(),
             
-            RequestHeaders = requestHeaders,  // Captures the formatted request 
+            RequestHeaders = "", // requestHeaders,  // Captures the formatted request 
             ClientIp = context.Connection.RemoteIpAddress?.ToString(),
             UserAgent = context.Request.Headers["User-Agent"].ToString(),
             RequestTime = DateTime.UtcNow,
             HttpVersion = context.Request.Protocol,  // Captures the HTTP version
-            RequestBody = requestBody // Captures the body of the HTTP request
+            RequestBody = ""//requestBody // Captures the body of the HTTP request
         };
 
         // Create a temporal MemoryStream to capture the response 
